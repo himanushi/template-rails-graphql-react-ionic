@@ -1,0 +1,72 @@
+# frozen_string_literal: true
+
+D = Steep::Diagnostic
+
+target :backend do
+  signature 'app'
+  signature 'lib'
+  signature 'sig'
+
+  check 'app'
+  check 'lib'
+
+  repo_path '.gem_rbs_collection'
+
+  # Assign one of :error, :warning, :information, :hint or :nil
+  configs =
+    {
+      D::Ruby::ArgumentTypeMismatch => :error,
+      D::Ruby::BlockBodyTypeMismatch => :error,
+      D::Ruby::BlockTypeMismatch => :error,
+      D::Ruby::BreakTypeMismatch => :error,
+      D::Ruby::DifferentMethodParameterKind => :error,
+      D::Ruby::FallbackAny => :hint,
+      D::Ruby::FalseAssertion => :error,
+      D::Ruby::ImplicitBreakValueMismatch => :error,
+      D::Ruby::IncompatibleAnnotation => :error,
+      D::Ruby::IncompatibleArgumentForwarding => :error,
+      D::Ruby::IncompatibleAssignment => :error,
+      D::Ruby::IncompatibleMethodTypeAnnotation => :error,
+      D::Ruby::IncompatibleTypeCase => :error,
+      D::Ruby::InsufficientKeywordArguments => :error,
+      D::Ruby::InsufficientPositionalArguments => :error,
+      D::Ruby::InsufficientTypeArgument => :error,
+      D::Ruby::MethodArityMismatch => :error,
+      D::Ruby::MethodBodyTypeMismatch => :error,
+      D::Ruby::MethodDefinitionMissing => :hint,
+      D::Ruby::MethodParameterMismatch => :error,
+      D::Ruby::MethodReturnTypeAnnotationMismatch => :error,
+      D::Ruby::MultipleAssignmentConversionError => :error,
+      D::Ruby::NoMethod => :error,
+      D::Ruby::ProcHintIgnored => :error,
+      D::Ruby::ProcTypeExpected => :error,
+      D::Ruby::RBSError => :error,
+      D::Ruby::RequiredBlockMissing => :error,
+      D::Ruby::ReturnTypeMismatch => :error,
+      D::Ruby::SetterBodyTypeMismatch => :error,
+      D::Ruby::SetterReturnTypeMismatch => :error,
+      D::Ruby::SyntaxError => :error,
+      D::Ruby::TypeArgumentMismatchError => :error,
+      D::Ruby::UnexpectedBlockGiven => :error,
+      D::Ruby::UnexpectedDynamicMethod => :error,
+      D::Ruby::UnexpectedError => :error,
+      D::Ruby::UnexpectedJump => :error,
+      D::Ruby::UnexpectedJumpValue => :error,
+      D::Ruby::UnexpectedKeywordArgument => :error,
+      D::Ruby::UnexpectedPositionalArgument => :error,
+      D::Ruby::UnexpectedSplat => :error,
+      D::Ruby::UnexpectedSuper => :error,
+      D::Ruby::UnexpectedTypeArgument => :error,
+      D::Ruby::UnexpectedYield => :error,
+      D::Ruby::UnknownConstant => :error,
+      D::Ruby::UnknownGlobalVariable => :error,
+      D::Ruby::UnknownInstanceVariable => :error,
+      D::Ruby::UnreachableBranch => :error,
+      D::Ruby::UnreachableValueBranch => :error,
+      D::Ruby::UnresolvedOverloading => :error,
+      D::Ruby::UnsatisfiableConstraint => :error,
+      D::Ruby::UnsupportedSyntax => :error
+    }
+
+  configure_code_diagnostics(configs)
+end

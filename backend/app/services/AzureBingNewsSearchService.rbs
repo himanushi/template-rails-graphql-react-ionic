@@ -1,0 +1,10 @@
+class AzureBingNewsSearchService
+  API_ENDPOINT: String
+  API_KEY: String?
+
+  def self.search: (
+    ?query: ::String,
+    ?count: ::Integer,
+    ?offset: ::Integer
+  ) -> Hash[untyped, untyped]
+end

@@ -1,0 +1,22 @@
+ARG RUBY_VERSION=3.3.4
+FROM docker.io/library/ruby:$RUBY_VERSION-slim AS base
+
+ENV LOCALE=ja \
+    LANG=C.UTF-8 \
+    APP_HOME=/backend
+
+RUN apt-get update -qq && \
+    apt-get install --no-install-recommends -y build-essential default-libmysqlclient-dev git pkg-config
+
+ADD . ${APP_HOME}
+
+RUN cd ${APP_HOME}; bundle install; EDITOR="mate --wait" bundle exec rails credentials:edit;
+
+WORKDIR ${APP_HOME}
+
+EXPOSE 3000
+
+CMD env | sort && \
+    rails db:create && \
+    bundle exec ridgepole -c config/database.yml --apply -f db/schema_file.rb && \
+    rails server -b 0.0.0.0 -p 3000

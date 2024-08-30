@@ -1,0 +1,11 @@
+module Loaders
+  class HasManyLoader
+    def self.load: (
+      untyped,
+      ::Symbol,
+      untyped,
+      ::Hash[::Symbol, untyped]
+    ) -> untyped
+    def self.query_root?: (untyped) -> bool
+  end
+end

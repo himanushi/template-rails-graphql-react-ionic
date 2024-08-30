@@ -1,0 +1,7 @@
+class GraphqlSchema < GraphQL::Schema
+  def self.resolve_type: (untyped, untyped, untyped) -> untyped
+  def self.id_from_object: (untyped, untyped, untyped) -> untyped
+  def self.object_from_id: (untyped, untyped) -> untyped
+  def self.execute: (*untyped) -> untyped
+  def self.disable_introspection_entry_points: (*untyped) -> untyped
+end

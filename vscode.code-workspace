@@ -1,0 +1,65 @@
+{
+  "folders": [
+    {
+      "path": "./"
+    },
+    {
+      "path": "./backend/"
+    },
+    {
+      "path": "./frontend/"
+    }
+  ],
+  "settings": {
+    "emeraldwalk.runonsave": {
+      "commands": [
+        {
+          "match": "\\.rb$|\\.rake$|\\.ru$|Gemfile|Steepfile|bin",
+          "cmd": "rubocop -A ${file}"
+        },
+        {
+          "match": "\\.rbs$",
+          "notMatch": ".*\\.gem_rbs_collection.*|.*\\.lock\\..*",
+          "cmd": "rbprettier --write '${file}'"
+        }
+      ]
+    },
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.patterns": {
+      "*.rb": "$(capture).rbs",
+      "*.yaml": "$(capture).lock.yaml",
+      "Gemfile": "Gemfile.lock"
+    },
+    "ruby.intellisense": "rubyLocate",
+    "ruby.rubocop.useBundler": true,
+    "ruby.rubocop.configFilePath": ".rubocop.yml",
+    "ruby.rubocop.onSave": true,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[ruby]": {
+      "editor.tabSize": 2
+    },
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    },
+    "[typescript]": {
+      "editor.tabSize": 2,
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+      "editor.tabSize": 2,
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "emeraldwalk.runonsave",
+      "misogi.ruby-rubocop",
+      "rebornix.ruby",
+      "esbenp.prettier-vscode",
+      "dbaeumer.vscode-eslint",
+      "soutaro.steep-vscode",
+      "rubocop.vscode-rubocop"
+    ]
+  }
+}

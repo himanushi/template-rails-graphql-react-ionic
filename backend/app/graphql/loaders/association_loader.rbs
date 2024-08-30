@@ -1,0 +1,26 @@
+module Loaders
+  class AssociationLoader
+    @model: untyped
+    @association_name: Symbol
+    @options: untyped
+
+    def self.validate: (untyped model, Symbol association_name) -> nil
+    def self.for: (*untyped) -> untyped
+    def initialize: (
+      untyped model,
+      Symbol association_name,
+      ?untyped options
+    ) -> void
+    def load: (untyped record) -> untyped
+    def cache_key: (untyped record) -> Integer
+    def perform: (Array[untyped] records) -> void
+    def fulfill: (untyped, untyped) -> untyped
+
+    private
+
+    def validate: -> untyped
+    def preload_association: (Array[untyped] records) -> untyped
+    def read_association: (untyped record) -> untyped
+    def association_loaded?: (untyped record) -> bool
+  end
+end

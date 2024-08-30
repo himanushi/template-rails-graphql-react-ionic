@@ -1,0 +1,28 @@
+# frozen_string_literal: true
+
+source 'https://rubygems.org'
+
+gem 'bootsnap', '~> 1.18', '>= 1.18.4'
+gem 'faraday', '~> 2.11'
+gem 'graphql', '~> 2.3', '>= 2.3.14'
+gem 'graphql-batch', '~> 0.6.0'
+gem 'mysql2', '~> 0.5'
+gem 'puma', '~> 6.4', '>= 6.4.2'
+gem 'rails', '~> 7.2.0'
+gem 'ridgepole', '~> 2.1'
+gem 'tzinfo-data', '~> 1.2024', '>= 1.2024.1', platforms: %i[windows jruby]
+
+group :development do
+  gem 'brakeman', '~> 6.1', '>= 6.1.2'
+  gem 'debug', '~> 1.9', '>= 1.9.2', platforms: %i[mri windows], require: 'debug/prelude'
+  gem 'graphiql-rails', '~> 1.10', '>= 1.10.1'
+  gem 'prettier', '~> 4.0', '>= 4.0.4'
+  gem 'rbs', '~> 3.5', '>= 3.5.3'
+  gem 'rbs_rails', '~> 0.12.0', '>= 0.12.0'
+  gem 'rubocop', '~> 1.65', '>= 1.65.1'
+  gem 'rubocop-ast', '~> 1.32', '>= 1.32.1'
+  gem 'rubocop-graphql', '~> 1.5', '>= 1.5.4'
+  gem 'rubocop-performance', '~> 1.21', '>= 1.21.1'
+  gem 'rubocop-rails', '~> 2.25', '>= 2.25.1'
+  gem 'steep', '~> 1.7', '>= 1.7.1'
+end

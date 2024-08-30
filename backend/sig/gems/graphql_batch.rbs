@@ -1,0 +1,6 @@
+module GraphQL
+  class Batch
+    class Loader
+    end
+  end
+end

@@ -1,0 +1,9 @@
+---
+name: actionview
+version: '6.0'
+source:
+  type: git
+  name: ruby/gem_rbs_collection
+  revision: a476a2a07da40f238a68afd88ffef247f95cdd2e
+  remote: https://github.com/ruby/gem_rbs_collection.git
+  repo_dir: gems
