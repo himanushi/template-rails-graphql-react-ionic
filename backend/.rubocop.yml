@@ -1,6 +1,5 @@
 require:
   - rubocop-ast
-  - rubocop-graphql
   - rubocop-performance
   - rubocop-rails
 
