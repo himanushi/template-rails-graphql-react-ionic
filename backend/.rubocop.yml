@@ -6,6 +6,7 @@ require:
 AllCops:
   TargetRubyVersion: 3.3.4
   NewCops: enable
+  SuggestExtensions: false
 
 Style/Documentation:
   Enabled: false
