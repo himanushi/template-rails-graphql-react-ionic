@@ -12,3 +12,4 @@ gems:
   - name: faraday
   - name: graphql
   - name: faraday
+  - name: promise

@@ -21,6 +21,10 @@
           "match": "\\.rbs$",
           "notMatch": ".*\\.gem_rbs_collection.*|.*\\.lock\\..*",
           "cmd": "rbprettier --write '${file}'"
+        },
+        {
+          "match": "\\.js$|\\.jsx$|\\.tsx$|\\.ts$|\\.json$|\\.css$|\\.code-workspace$",
+          "cmd": "npx @biomejs/biome check --write --unsafe ${file}"
         }
       ]
     },
@@ -34,8 +38,7 @@
     "ruby.rubocop.useBundler": true,
     "ruby.rubocop.configFilePath": ".rubocop.yml",
     "ruby.rubocop.onSave": true,
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false,
     "[ruby]": {
       "editor.tabSize": 2
     },
