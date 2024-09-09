@@ -37,21 +37,10 @@
     "ruby.intellisense": "rubyLocate",
     "ruby.rubocop.useBundler": true,
     "ruby.rubocop.configFilePath": ".rubocop.yml",
-    "ruby.rubocop.onSave": true,
+    "ruby.rubocop.onSave": false,
     "editor.formatOnSave": false,
     "[ruby]": {
       "editor.tabSize": 2
-    },
-    "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": "explicit"
-    },
-    "[typescript]": {
-      "editor.tabSize": 2,
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[typescriptreact]": {
-      "editor.tabSize": 2,
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
     }
   },
   "extensions": {
@@ -62,7 +51,8 @@
       "esbenp.prettier-vscode",
       "dbaeumer.vscode-eslint",
       "soutaro.steep-vscode",
-      "rubocop.vscode-rubocop"
+      "rubocop.vscode-rubocop",
+      "biome.biome-vscode"
     ]
   }
 }
