@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class GraphqlSchema < GraphQL::Schema
-  mutation(::MutationObject)
-  query(::QueryObject)
+  # mutation(::MutationObject)
+  # query(::QueryObject)
 
   use GraphQL::Batch
 
