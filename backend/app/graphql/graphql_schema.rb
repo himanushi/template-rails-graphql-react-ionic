@@ -19,7 +19,7 @@ class GraphqlSchema < GraphQL::Schema
   end
 
   # このエラー数に達した場合、検証を停止します：
-  validate_max_errors(100)
+  validate_max_errors(10)
 
   # Relayスタイルのオブジェクト識別：
 
@@ -37,12 +37,7 @@ class GraphqlSchema < GraphQL::Schema
 
   # `authorized?`がオブジェクトに対してfalseを返す場合の処理を行うためにこのフックをオーバーライドします：
   def self.unauthorized_object(error)
-    # nilを返す代わりに、レスポンスにトップレベルのエラーを追加します：
-    raise GraphQL::ExecutionError.new(
-      "タイプ #{error.type.graphql_name} のオブジェクトは、権限のために隠されました",
-      extensions: {
-        'code' => Types::Enums::ErrorCode::UNAUTHORIZED
-      }
-    )
+    # Add a top-level error to the response instead of returning nil:
+    raise GraphQL::ExecutionError, "An object of type #{error.type.graphql_name} was hidden due to permissions"
   end
 end
