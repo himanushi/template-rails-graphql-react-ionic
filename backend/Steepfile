@@ -31,6 +31,7 @@ target :backend do
       D::Ruby::InsufficientKeywordArguments => :error,
       D::Ruby::InsufficientPositionalArguments => :error,
       D::Ruby::InsufficientTypeArgument => :error,
+      D::Ruby::InvalidIgnoreComment => :error,
       D::Ruby::MethodArityMismatch => :error,
       D::Ruby::MethodBodyTypeMismatch => :error,
       D::Ruby::MethodDefinitionMissing => :hint,
